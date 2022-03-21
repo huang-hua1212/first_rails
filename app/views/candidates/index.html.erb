@@ -1,4 +1,5 @@
 <h1>候選人列表</h1>
+<p style="color: green"><%= notice %></p>
 <%= link_to "<span class='glyphicon glyphicon-knight'></span> 新增候選人".html_safe, new_candidate_path%>
 <div>
   <table class = "table">
@@ -15,7 +16,10 @@
           政見
         </td>
         <td>
-          得票數
+          得票數(未記錄ip)
+        </td>
+        <td>
+          得票數(已記錄ip)
         </td>
       </tr>
     </thead>

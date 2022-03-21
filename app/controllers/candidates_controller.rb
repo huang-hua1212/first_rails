@@ -17,7 +17,7 @@ class CandidatesController < ApplicationController
         @candidate = Candidate.new(candidate_params)
         if @candidate.save
             # 成功
-            redirect_to candidates_path, notice: "新增候選人"
+            redirect_to candidates_path, notice: "新增候選人成功!!!!"
         else
             # 失敗
             render :new
@@ -43,7 +43,7 @@ class CandidatesController < ApplicationController
         # 把old candidate 更新(update)為 candidate_params
         if @candidate.update(candidate_params)
         # 成功
-        redirect_to candidates_path, notice: "資料更新成功!"
+        redirect_to candidates_path, notice: "資料更新成功!!!!!"
         else
         # 失敗
         render :edit

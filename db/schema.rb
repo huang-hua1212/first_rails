@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_21_092457) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_21_151812) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.boolean "is_online"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "candidates", force: :cascade do |t|
@@ -40,6 +41,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_092457) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.boolean "is_available"
+    t.integer "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string "title"
+    t.string "tel"
+    t.string "address"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -56,6 +76,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_092457) do
     t.index ["candidate_id"], name: "index_vote_logs_on_candidate_id"
   end
 
+  create_table "ware_houses", force: :cascade do |t|
+    t.integer "store_id", null: false
+    t.integer "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_ware_houses_on_product_id"
+    t.index ["store_id"], name: "index_ware_houses_on_store_id"
+  end
+
   add_foreign_key "posts", "users"
   add_foreign_key "vote_logs", "candidates"
+  add_foreign_key "ware_houses", "products"
+  add_foreign_key "ware_houses", "stores"
 end
