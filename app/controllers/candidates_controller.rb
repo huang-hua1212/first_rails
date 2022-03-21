@@ -8,32 +8,10 @@ class CandidatesController < ApplicationController
    
     # GET /candidates/new
     def new
+        # 除非 new 動作裡指定要做別的事。new 動作可透過 Client.new，無參數，為 View 提供實體變數 
         @candidate = Candidate.new
     end
 
-    # def show
-    # end
-    # def show
-    #     @candidate =  Candidate.find(params[:id])
-    # end
-
-    # 使用get方法
-    def edit
-        @candidate = Candidate.find_by(id: params[:id])
-    end
-    # edit後，使用post方法執行update
-    def update
-        @candidate = Candidate.find_by(id: params[:id])
-
-        if @candidate.update(candidate_params)
-        # 成功
-        redirect_to candidates_path, notice: "資料更新成功!"
-        else
-        # 失敗
-        render :edit
-        end
-        
-    end
     # post /candidates
     def create
         @candidate = Candidate.new(candidate_params)
@@ -45,6 +23,33 @@ class CandidatesController < ApplicationController
             render :new
         end
     end
+    # def show
+    # end
+    # def show
+    #     @candidate =  Candidate.find(params[:id])
+    # end
+
+    # 使用get方法
+    def edit
+        # 先從資料庫中抓到是哪個candidate
+        @candidate = Candidate.find_by(id: params[:id])
+    end
+    # edit後，使用post方法執行update
+    def update
+        # 先從資料庫中抓到是哪個candidate
+        @candidate = Candidate.find_by(id: params[:id])
+
+       
+        # 把old candidate 更新(update)為 candidate_params
+        if @candidate.update(candidate_params)
+        # 成功
+        redirect_to candidates_path, notice: "資料更新成功!"
+        else
+        # 失敗
+        render :edit
+        end
+    end
+    
 
 
     def destroy
@@ -55,6 +60,7 @@ class CandidatesController < ApplicationController
         redirect_to candidates_path, notice: "候選人資料已刪除!"
       end
 
+    #   名稱自定義
     def candidate_params
         params.require(:candidate).permit(:name, :age, :party, :politics)
     end

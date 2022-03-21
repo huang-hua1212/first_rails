@@ -1,5 +1,5 @@
 <h1>候選人列表</h1>
-<%= link_to "新增候選人", new_candidate_path%>
+<%= link_to "<span class='glyphicon glyphicon-knight'></span> 新增候選人".html_safe, new_candidate_path%>
 <div>
   <table class = "table">
     <thead>
@@ -20,33 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= @candidates.each do |candidate| %>
-        <tr>
-          <td>
-            <%= button_to "投給這位", vote_candidate_path(candidate), method: "post", data: { confirm: "確定投給這個人?" },class:"btn btn-primary btn-xs" %>
-          </td>
-          <td>
-            <%= candidate.name %>(年齡: <%= candidate.age %>歲)
-          </td>
-          <td>
-            <%= candidate.party %>
-          </td>
-          <td>
-            <%= candidate.politics %>
-          </td>
-          <td>
-            <%= candidate.votes %>
-            &nbsp;
-            <%= candidate.vote_logs.size %>
-          </td>
-          <td>
-            <%= link_to "編輯", edit_candidate_path(candidate) %>
-          </td>
-          <td>
-            <%= button_to "刪除", candidate_path(candidate), method: "delete", data: { confirm: "確認刪除"}, class:"btn btn-warning btn-xs" %>
-          </td>
-        </tr>
-      <% end %>
+      <%= render @candidates %>
     </tbody>
   </table>
 </div>

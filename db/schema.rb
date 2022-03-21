@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_20_130430) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_21_092457) do
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.boolean "is_online"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.string "party"

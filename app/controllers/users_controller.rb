@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    # 除非 new 動作裡指定要做別的事。new 動作可透過 Client.new，無參數，為 View 提供實體變數 
     @user = User.new
   end
 
