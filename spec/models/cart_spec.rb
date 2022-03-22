@@ -36,10 +36,14 @@ RSpec.describe Cart, type: :model do
 
       expect(cart.items.first.id).to be p1.id  # 第 1 個 item 的商品 id 應該會等於商品 1 的 id
       expect(cart.items.second.id).to be p2.id # 第 2 個 item 的商品 id 應該會等於商品 2 的 id
-      # expect(cart.items.first).to be_a Product # 第 1 個 item 拿出來的東西應該是一種商品
+      # expect(cart.items.first.product).to be_a Product # 第 1 個 item 拿出來的東西應該是一種商品
     end
-    it "每個 Cart Item 都可以計算它自己的金額（小計）"
-    it "可以計算整台購物車的總消費金額"
+    # it "每個 Cart Item 都可以計算它自己的金額（小計）" do
+      
+    # end
+
+
+    # it "可以計算整台購物車的總消費金額"
     it "特別活動可能可搭配折扣（例如聖誕節的時候全面打 9 折，或是滿額滿千送百）"
   end
 

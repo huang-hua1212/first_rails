@@ -22,6 +22,12 @@ class CartItem
       @quantity += n
     end
     def product
-      Product.find_by(id: product_id)
+      # cart_item對照Product，並且返回對應的產品
+      Product.find_by(id: id)
+    end
+    def price
+      # 此product為上述之function product，返回產品之價錢*數量
+      # price為product的屬性
+      product.price * quantity
     end
   end
