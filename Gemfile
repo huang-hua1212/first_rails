@@ -3,6 +3,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 
+
+
+source 'https://rubygems.org'
+
+# ...[略]...
+
+group :development, :test do
+# gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  # gem "factory_girl_rails"
+  #  gem 'faker'
+  # or
+  # gem "factory_girl"
+end
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
@@ -51,6 +66,13 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
+
+# 萬一伺服器當機或重開機，這個排隊的資料就不見了。在實務上常會另外設置可以排隊的地方
+gem 'delayed_job_active_record'
+
+
+
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
