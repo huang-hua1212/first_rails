@@ -8,10 +8,7 @@ require 'rails_helper'
 # homehomehome2
 # homehomehome2
 # homehomehome2
-# homehomehome3
-# homehomehome3
-# homehomehome3
-# homehomehome3
+
 
 
 RSpec.describe CartItem, type: :model do
