@@ -19,7 +19,6 @@
 # company4
 # company4
 
-
 # PORO MODEL
 class Cart 
     # 加了一個 items 的 attr_reader，讓內、外部的取用方便一些。
