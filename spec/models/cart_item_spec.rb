@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# homehomehome
 RSpec.describe CartItem, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   it "每個 Cart Item 都可以計算它自己的金額（小計）" do
@@ -26,7 +26,7 @@ RSpec.describe CartItem, type: :model do
     expect(cart.total_price).to eq 1200
   end
 
-  
+
   describe "購物車進階功能" do
   end
 end
