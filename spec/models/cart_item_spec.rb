@@ -1,4 +1,9 @@
 require 'rails_helper'
+# homehomehome
+# homehomehome
+# homehomehome
+# homehomehome
+# homehomehome
 
 RSpec.describe CartItem, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
@@ -26,7 +31,7 @@ RSpec.describe CartItem, type: :model do
     expect(cart.total_price).to eq 1200
   end
 
-  
+
   describe "購物車進階功能" do
     it "可以將購物車內容轉換成 Hash，存到 Session 裡" do
       # p1 = Product.create(name:"七龍珠", price: 80)      # 建立商品 1
