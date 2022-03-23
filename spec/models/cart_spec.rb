@@ -44,11 +44,11 @@ RSpec.describe Cart, type: :model do
 
 
     # it "可以計算整台購物車的總消費金額"
-    it "特別活動可能可搭配折扣（例如聖誕節的時候全面打 9 折，或是滿額滿千送百）"
+    # it "特別活動可能可搭配折扣（例如聖誕節的時候全面打 9 折，或是滿額滿千送百）"
   end
 
-  describe "購物車進階功能" do
-    it "可以將購物車內容轉換成 Hash，存到 Session 裡"
-    it "可以把 Session 的內容（Hash 格式），還原成購物車的內容"
-  end
+  # describe "購物車進階功能" do
+  #   it "可以將購物車內容轉換成 Hash，存到 Session 裡"
+  #   it "可以把 Session 的內容（Hash 格式），還原成購物車的內容"
+  # end
 end

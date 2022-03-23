@@ -1,4 +1,5 @@
 # 檔案：app/models/cart_item.rb
+# PORO MODEL
 class CartItem
     attr_reader :id, :quantity
   
@@ -7,7 +8,7 @@ class CartItem
     #   @quantity = quantity
 
     # end
-    def initialize(id, name, description, price, is_available,store_id, quantity = 1)
+    def initialize(id, name="", description="", price=0, is_available=true,store_id=1, quantity = 1)
       @id = id
       @quantity = quantity
 
@@ -30,4 +31,5 @@ class CartItem
       # price為product的屬性
       product.price * quantity
     end
+
   end

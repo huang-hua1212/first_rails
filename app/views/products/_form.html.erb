@@ -1,0 +1,18 @@
+<%= form_for(product) do |f| %>
+  <%= f.label :name, "商品名稱" %>
+  <%= f.text_field :name %>
+  <br/>
+  <%= f.label :description, "說明" %>
+  <%= f.text_field :description %>
+  <br/>
+  <%= f.label :price, "售價" %>
+  <%= f.text_field :price %>
+  <br/>
+  <%= f.label :is_available, "是否開放" %>
+  <%= f.text_field :is_available%>
+  <br/>
+  <%= f.label :store_id, "store_id" %>
+  <%= f.text_field :store_id%>
+  <br/>
+  <%= f.submit class: "btn btn-default btn-primary" %>
+<% end %>
