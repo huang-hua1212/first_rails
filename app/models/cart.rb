@@ -8,6 +8,8 @@
 # company2
 # company2
 # company2
+# company2
+# company2
 
 # PORO MODEL
 class Cart 
