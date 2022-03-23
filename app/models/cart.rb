@@ -1,23 +1,4 @@
 
-# company
-# company
-# company
-# company
-# company
-# company2
-# company2
-# company2
-# company2
-# company2
-# company2
-# company3
-# company3
-# company3
-# company3
-# company3
-# company3
-# company4
-# company4
 
 # PORO MODEL
 class Cart 
