@@ -1,7 +1,6 @@
 # home1
 # home1
-# home2
-# home2
+
 
 # PORO MODEL
 class Cart 
