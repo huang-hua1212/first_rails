@@ -2,10 +2,6 @@
 # 10
 # 10
 
-# 10
-# 10
-# 10
-
 
 # PORO MODEL
 class Cart 
