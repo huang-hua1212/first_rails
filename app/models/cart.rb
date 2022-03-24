@@ -31,9 +31,7 @@ class Cart
         @items.empty?
     end
 
-    # def product
-    #     Product.find_by(id: id)
-    # end
+  
     def total_price
         items.reduce(0) {|sum, item| sum+item.price}
     end
