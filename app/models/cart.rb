@@ -1,7 +1,5 @@
 # 777
 # 777
-# 777
-
 
 # PORO MODEL
 class Cart 
